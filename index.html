@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+    <title>Página de Teste - Bot Duko</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+            background-color: #f0f2f5; 
+        }
+        .container { 
+            text-align: center; 
+            padding: 40px; 
+            background-color: white; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+        }
+        h1 { 
+            color: #333; 
+        }
+        p { 
+            color: #666; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Site de Testes da Duko Ecommerce</h1>
+        <p>Esta é uma página de demonstração para o Einstein Bot "Dukito".</p>
+        <p>O botão do chat deve aparecer no canto desta página.</p>
+    </div>
+
+    <script type='text/javascript'>
+        function initEmbeddedMessaging() {
+            try {
+                embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+                embeddedservice_bootstrap.init(
+                    '00Dbm00000TBI5n',
+                    'WebChat',
+                    'https://creative-otter-stfxzi-dev-ed.trailblaze.my.site.com/ESWWebChat1759447351744',
+                    {
+                        scrt2URL: 'https://creative-otter-stfxzi-dev-ed.trailblaze.my.salesforce-scrt.com'
+                    }
+                );
+            } catch (err) {
+                console.error('Error loading Embedded Messaging: ', err);
+            }
+        };
+    </script>
+    <script type='text/javascript' src='https://creative-otter-stfxzi-dev-ed.trailblaze.my.site.com/ESWWebChat1759447351744/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+</body> </html>
