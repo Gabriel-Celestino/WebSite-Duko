@@ -3,45 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
-    <title>Página de Teste - Bot Duko</title>
+    <title>Duko Ecommerce - Loja Gamer</title>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            margin: 0; 
-            background-color: #f0f2f5; 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .container { 
-            text-align: center; 
-            padding: 40px; 
-            background-color: white; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #111, #1a1a1a);
+            color: #fff;
+            overflow-x: hidden;
         }
-        h1 { 
-            color: #333; 
+
+        header {
+            background: #0d0d0d;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.8s ease;
         }
-        p { 
-            color: #666; 
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            background: linear-gradient(90deg, #00e0ff, #00ff88);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00ffcc;
+        }
+
+        .hero {
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/imagem\ de\ fundo.png') center/cover no-repeat;
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 60px;
+            animation: fadeUp 1s ease;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .product-card {
+            background: #1c1c1c;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0,255,200,0.3);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .product-card .info {
+            padding: 20px;
+        }
+
+        .product-card h3 {
+            color: #00ffcc;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            font-size: 0.95em;
+            color: #ccc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #0d0d0d;
+            color: #aaa;
+            font-size: 0.9em;
+            border-top: 1px solid #222;
+        }
+
+        footer span {
+            color: #00ffcc;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav {
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Site de Testes da Duko Ecommerce</h1>
-        <p>Esta é uma página de demonstração para o Einstein Bot "Dukito".</p>
-        <p>O botão do chat deve aparecer no canto desta página.</p>
-    </div>
+    <header>
+        <h1>Duko Ecommerce</h1>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Jogos</a>
+            <a href="#">Consoles</a>
+            <a href="#">Hardware</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h2>Bem-vindo à Duko Ecommerce</h2>
+            <p>Os melhores jogos, acessórios e hardware gamer em um só lugar!</p>
+        </div>
+    </section>
+
+    <section class="products">
+        <div class="product-card">
+            <img src="img/Jogos Digitais.jpg" alt="Jogos Digitais">
+            <div class="info">
+                <h3>Jogos Digitais</h3>
+                <p>Explore títulos incríveis para todas as plataformas, com descontos exclusivos.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="img/Consoles.png" alt="Consoles">
+            <div class="info">
+                <h3>Consoles</h3>
+                <p>Encontre os consoles mais desejados e reviva a nostalgia dos clássicos.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="img/hardware.jpg" alt="Hardware Gamer">
+            <div class="info">
+                <h3>Hardware</h3>
+                <p>Monte seu setup com o que há de mais avançado em desempenho e estilo.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="img/acessorios-para-games.jpg" alt="Acessórios Gamer">
+            <div class="info">
+                <h3>Acessórios</h3>
+                <p>Teclados, mouses e headsets de alta performance para elevar seu gameplay.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 <span>Duko Ecommerce</span> — Todos os direitos reservados.
+    </footer>
 
     <script type='text/javascript'>
         function initEmbeddedMessaging() {
             try {
-                embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-
+                embeddedservice_bootstrap.settings.language = 'pt_BR';
                 embeddedservice_bootstrap.init(
                     '00Dbm00000TBI5n',
                     'WebChat',
@@ -51,10 +222,11 @@
                     }
                 );
             } catch (err) {
-                console.error('Error loading Embedded Messaging: ', err);
+                console.error('Erro ao carregar o chat do Dukito:', err);
             }
-        };
+        }
     </script>
     <script type='text/javascript' src='https://creative-otter-stfxzi-dev-ed.trailblaze.my.site.com/ESWWebChat1759447351744/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
-</body> </html>
+</body>
+</html>
